@@ -1,5 +1,5 @@
-def clear_screen():
-    print("\033[2J\033[H", end="")
+def clear():
+    print("\033c", end="")
 
 
 def hide_cursor():

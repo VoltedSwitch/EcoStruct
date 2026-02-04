@@ -1,3 +1,3 @@
-## v0.0.0 – Initial tracked prototype
+## v0.0.1 – Foundation Of Navigation System
 
-- Nothing yet, under constant development
+- Under constant development
