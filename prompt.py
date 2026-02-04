@@ -23,7 +23,7 @@ def member_names():
 
     while True:
         user_input = input.parse(
-            f"Enter name of member #{member_counter} OR 1 -> Back, 2 -> Done: "
+            f"Enter name of member #{member_counter} OR (1) Back, (2) Done: "
         )
 
         if user_input == "1":
@@ -40,8 +40,8 @@ def member_names():
 def menu_option():
     while True:
         presentation.display_version()
-        print("1 -> Create New Project")
-        print("2 -> Back")
+        print("(1) Create New Project")
+        print("(2) Back")
         presentation.seperate_options_and_input()
         user_input = input.parse("> ")
         screen.clear()

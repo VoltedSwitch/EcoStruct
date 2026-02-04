@@ -16,6 +16,7 @@ menu_option = None
 while True:
     if to_run is prompt.organization_name:
         control_map = prompt.organization_name()
+        print()
 
         organization_name = control_map[OUTPUT]
         to_run = control_map[TO_RUN]
@@ -31,5 +32,3 @@ while True:
 
         menu_option = control_map[OUTPUT]
         to_run = control_map[TO_RUN]
-        
-    print()
