@@ -1,34 +1,39 @@
 import screen
 import prompt
-import control
-from constants.key import OUTPUT, TO_RUN
-from navigation import Navigation
+from constants.command import GO_BACK, CREATE_PROJECT, DONE
+from constants.key import NAME, MEMBERS, GOAL, PROGRESS
 from organization import Organization
 
 screen.clear()
 
-to_run = control.generate_map(to_run=prompt.organization_name)[TO_RUN]
+to_run = prompt.get_organization_details
 
-organization_name = None
-member_names = None
-menu_option = None
+organization = None
 
 while True:
-    if to_run is prompt.organization_name:
-        control_map = prompt.organization_name()
-        print()
+    if to_run is prompt.get_organization_details:
+        result = to_run()
+        organization = Organization(result[NAME], result[MEMBERS])
+        to_run = prompt.choose_menu_option
 
-        organization_name = control_map[OUTPUT]
-        to_run = control_map[TO_RUN]
+    elif to_run is prompt.choose_menu_option:
+        result = to_run()
 
-    elif to_run is prompt.member_names:
-        control_map = prompt.member_names()
+        if result == GO_BACK:
+            to_run = prompt.get_organization_details
+        elif result == CREATE_PROJECT:
+            to_run = prompt.project_details
 
-        member_names = control_map[OUTPUT]
-        to_run = control_map[TO_RUN]
+    elif to_run is prompt.project_details:
+        result = to_run(organization.member_names)
 
-    elif to_run is prompt.menu_option:
-        control_map = prompt.menu_option()
+        if result == GO_BACK:
+            to_run = prompt.choose_menu_option
+        else:
+            if organization:
+                organization.add_project(
+                    result[NAME], result[MEMBERS], result[GOAL], result[PROGRESS]
+                )
 
-        menu_option = control_map[OUTPUT]
-        to_run = control_map[TO_RUN]
+    elif to_run is prompt.project_management:
+        result = to_run()

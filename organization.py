@@ -22,15 +22,20 @@ class Organization(DataManager):
 
         return members
 
-    def add_project(self, members, project_title, goal):
-        project = Project(project_title, members, goal)
+    def add_project(self, title, members, goal, progress):
+        project = Project(title, members, goal, progress)
         self.projects.append(project)
 
     def remove_project(self, project_number):
         index = project_number - 1
         self.projects.pop(index)
 
-    def generate_id(self, id_numbers):
+    @property
+    def member_names(self):
+        return [member.name for member in self.members.values()]
+
+    @staticmethod
+    def generate_id(id_numbers):
         while True:
             id_number = randint(10000, 99999)
 

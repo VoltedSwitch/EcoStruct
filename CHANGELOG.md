@@ -1,3 +1,10 @@
+## v0.0.3 – Functionality & UX Details
+
+- Menu space made functionable
+    - Can enter project details
+- Added error messages to help users with input
+- Important Bug Fixes
+
 ## v0.0.2 – UI Tweaks
 
 - New button look
