@@ -26,6 +26,6 @@ class Colors:
     CROSSED = "\033[9m"
     END = "\033[0m"
 
-
-def format_error_message(text):
-    return Colors.RED + text + Colors.END
+    @staticmethod
+    def color_error_message(text):
+        return Colors.RED + text + Colors.END

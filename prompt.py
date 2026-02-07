@@ -7,7 +7,7 @@ from constants.key import PARSED, PROMPT, UNPARSED, NAME, MEMBERS, GOAL, PROGRES
 from constants.command import GO_BACK, CREATE_PROJECT, DONE
 
 from validators import valid_list_digit, valid_range_digit
-from colors import format_error_message
+from colors import Colors
 
 
 def get_input_status(input_info):
@@ -30,9 +30,10 @@ def collect_member_names(before_prompt_messages=None):
 
     while True:
         print(version.display)
+
         if required_field_message["display"]:
             print(
-                format_error_message(
+                Colors.color_error_message(
                     required_field_message[required_field_message["display"]]
                 )
             )
@@ -82,9 +83,10 @@ def select_member_names(member_names, before_prompt_messages=None):
 
     while True:
         print(version.display)
+
         if required_field_message["display"]:
             print(
-                format_error_message(
+                Colors.color_error_message(
                     required_field_message[required_field_message["display"]]
                 )
             )
@@ -141,7 +143,7 @@ def get_organization_details():
         print(version.display)
 
         if required_field_message["display"]:
-            print(format_error_message(required_field_message["message"]))
+            print(Colors.color_error_message(required_field_message["message"]))
             print()
             required_field_message["display"] = False
 
@@ -172,7 +174,7 @@ def choose_menu_option():
 
         if required_field_message["display"]:
             print(
-                format_error_message(
+                Colors.color_error_message(
                     required_field_message[required_field_message["display"]]
                 )
             )
@@ -210,7 +212,7 @@ def project_details(member_names):
 
         if required_field_message["display"]:
             print(
-                format_error_message(
+                Colors.color_error_message(
                     required_field_message[required_field_message["display"]]
                 )
             )
@@ -229,12 +231,13 @@ def project_details(member_names):
 
     while True:
         print(version.display)
+
         print(get_input_status(name))
         print()
 
         if required_field_message["display"]:
             print(
-                format_error_message(
+                Colors.color_error_message(
                     required_field_message[required_field_message["display"]]
                 )
             )
@@ -253,6 +256,7 @@ def project_details(member_names):
 
     while True:
         print(version.display)
+
         print(get_input_status(name))
         print()
         print(get_input_status(goal))
@@ -260,7 +264,7 @@ def project_details(member_names):
 
         if required_field_message["display"]:
             print(
-                format_error_message(
+                Colors.color_error_message(
                     required_field_message[required_field_message["display"]]
                 )
             )
