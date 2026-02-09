@@ -1,19 +1,18 @@
-## v0.0.3 – Functionality & UX Details
+## v0.0.3 – Functionality and UX
 
-- Menu space made functionable
-    - Can enter project details
-- Added error messages to help users with input
-- Important Bug Fixes
+- Enabled project detail entry in the menu area
+- Added input validation error messages
+- Fixed important bugs
 
 ## v0.0.2 – UI Tweaks
 
-- New button look
-- Tweaked display spacing logic after a step
+- Updated button appearance
+- Adjusted display spacing after steps
 
-## v0.0.1 – Foundation Of Navigation System
+## v0.0.1 – Navigation Foundation
 
-- Under constant development
+- Established initial navigation flow
 
-## v0.0.0 – Initial tracked prototype
+## v0.0.0 – Initial Prototype
 
-- Nothing yet, under constant development
+- Initial tracked prototype
